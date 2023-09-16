@@ -16,13 +16,19 @@ type Topic = {
 }
 
 type State = {
-  topic: Topic | null
+  topic: Topic
   essays: Essay[]
 }
 
 export const useContentStore = defineStore('contentStore', () => {
+  const defaultTopic: Topic = {
+    id: 'curry-rice',
+    header: '',
+    imageLink: ''
+  }
+
   const state = ref<State>({
-    topic: null,
+    topic: defaultTopic,
     essays: []
   })
 
