@@ -32,7 +32,6 @@ export default defineComponent({
   display: flex;
   justify-content: center;
   align-content: flex-start;
-  overflow: hidden;
   min-height: min-content;
   margin-top: 0px;
 }
