@@ -6,8 +6,9 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType } from 'vue'
-import { Essay } from '../views/ContentView.vue'
+import { defineComponent } from 'vue'
+import type { PropType } from 'vue'
+import type { Essay } from '../views/ContentView.vue'
 
 export default defineComponent({
   props: {
