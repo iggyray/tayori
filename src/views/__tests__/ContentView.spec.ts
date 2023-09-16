@@ -39,6 +39,6 @@ describe('ContentView tests', () => {
 
     expect(wrapper.find('[data-cy=content-view__header]').text()).toStrictEqual(title)
     expect(wrapper.find('[data-cy=essay-component__title]').text()).toStrictEqual(title)
-    expect(wrapper.find('[data-cy=essay-component__body]').text()).toStrictEqual(body)
+    expect(wrapper.find('[data-cy=essay-component__paragraph-0]').text()).toStrictEqual(body)
   })
 })

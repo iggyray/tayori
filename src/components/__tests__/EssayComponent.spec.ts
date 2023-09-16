@@ -21,6 +21,6 @@ describe('EssayComponent.vue tests', () => {
 
     // Assert
     expect(wrapper.find('[data-cy=essay-component__title]').text()).toStrictEqual(title)
-    expect(wrapper.find('[data-cy=essay-component__body]').text()).toStrictEqual(body)
+    expect(wrapper.find('[data-cy=essay-component__paragraph-0]').text()).toStrictEqual(body)
   })
 })

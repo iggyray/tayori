@@ -2,7 +2,7 @@
   <div>
     <h3 data-cy="essay-component__title">{{ essay.title }}</h3>
     <div v-for="(paragraph, index) in splitEssayBody" :key="index">
-      <p>{{ paragraph }}</p>
+      <p :data-cy="`essay-component__paragraph-${index}`">{{ paragraph }}</p>
     </div>
   </div>
 </template>
