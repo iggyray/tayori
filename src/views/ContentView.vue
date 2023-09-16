@@ -43,11 +43,11 @@ export default defineComponent({
 
     const essay = computed<Essay>(() => contentStore.state.essays[selectedEssayIndex.value])
 
-    const contentCount = contentStore.state.essays.length
-
     const pageTitle = 'カレーライス'
 
-    const nextButtonDisabled = computed(() => selectedEssayIndex.value === contentCount - 1)
+    const nextButtonDisabled = computed(
+      () => selectedEssayIndex.value === contentStore.state.essays.length - 1
+    )
 
     const nextItem = () => {
       if (nextButtonDisabled.value) return
@@ -64,7 +64,6 @@ export default defineComponent({
     return {
       topic,
       essay,
-      contentCount,
       pageTitle,
       selectedEssayIndex,
       nextButtonDisabled,
