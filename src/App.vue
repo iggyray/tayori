@@ -5,18 +5,23 @@
     <RouterLink to="/about">About</RouterLink>
   </nav>
    -->
+  <div class="page-header">
+    <h2>t a y o r i</h2>
+  </div>
   <RouterView />
+  <side-bar class="sidebar" />
 </template>
 
 <script lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterView } from 'vue-router'
 import { defineComponent } from 'vue'
+import SideBar from './components/SideBar.vue'
 
 export default defineComponent({
   name: 'App',
   components: {
-    RouterLink,
-    RouterView
+    RouterView,
+    SideBar
   }
 })
 </script>
@@ -28,11 +33,17 @@ export default defineComponent({
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
-  display: flex;
+  display: grid;
+  width: 100%;
+  grid-template-columns: auto;
+  grid-template-rows: 75px auto;
   justify-content: center;
-  align-content: flex-start;
-  min-height: min-content;
   margin-top: 0px;
+}
+
+.sidebar {
+  position: fixed;
+  top: 100px;
+  left: 200px;
 }
 </style>
