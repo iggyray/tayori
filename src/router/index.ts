@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import ContentView from '../views/ContentView.vue'
 import AboutView from '../views/AboutView.vue'
+import TopicView from '../views/TopicView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -12,6 +13,11 @@ const router = createRouter({
     },
     {
       path: '/essays',
+      name: 'topics',
+      component: TopicView
+    },
+    {
+      path: '/essays/curry-rice',
       name: 'content',
       component: ContentView
     }

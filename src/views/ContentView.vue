@@ -1,7 +1,7 @@
 <template>
   <div class="content-view__container">
     <h2 data-cy="content-view__header">{{ topic.header }}</h2>
-    <img :src="topic.imageLink" />
+    <img :src="'../' + topic.imageLink" />
     <essay-component :essay="essay" />
     <div>
       <button @click="prevItem" :disabled="prevButtonDisabled">前</button>
@@ -21,7 +21,7 @@ export type Essay = {
   body: string
 }
 
-type Topic = {
+export type Topic = {
   id: string
   header: string
   imageLink: string
