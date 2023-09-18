@@ -14,16 +14,12 @@
 import { RouterView } from 'vue-router'
 import { defineComponent } from 'vue'
 import SideBar from './components/SideBar.vue'
-import AboutView from './views/AboutView.vue'
-import ContentView from './views/ContentView.vue'
 
 export default defineComponent({
   name: 'App',
   components: {
     RouterView,
-    SideBar,
-    AboutView,
-    ContentView
+    SideBar
   }
 })
 </script>
