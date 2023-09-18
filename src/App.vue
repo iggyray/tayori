@@ -1,14 +1,12 @@
 <template>
-  <!--
-  <nav>
-    <RouterLink to="/">Home</RouterLink>
-    <RouterLink to="/about">About</RouterLink>
-  </nav>
-   -->
   <div class="page-header">
     <h2>t a y o r i</h2>
   </div>
-  <RouterView />
+  <RouterView v-slot="{ Component }">
+    <transition mode="out-in">
+      <component :is="Component" />
+    </transition>
+  </RouterView>
   <side-bar class="sidebar" />
 </template>
 
@@ -16,12 +14,16 @@
 import { RouterView } from 'vue-router'
 import { defineComponent } from 'vue'
 import SideBar from './components/SideBar.vue'
+import AboutView from './views/AboutView.vue'
+import ContentView from './views/ContentView.vue'
 
 export default defineComponent({
   name: 'App',
   components: {
     RouterView,
-    SideBar
+    SideBar,
+    AboutView,
+    ContentView
   }
 })
 </script>
@@ -45,5 +47,15 @@ export default defineComponent({
   position: fixed;
   top: 100px;
   left: 200px;
+}
+
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
 }
 </style>
