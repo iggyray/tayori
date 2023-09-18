@@ -7,7 +7,8 @@
   </a>
 </template>
 <script lang="ts">
-import { defineComponent, PropType } from 'vue'
+import { defineComponent } from 'vue'
+import type { PropType } from 'vue'
 import { useRouter } from 'vue-router'
 import type { Topic } from '../views/ContentView.vue'
 
