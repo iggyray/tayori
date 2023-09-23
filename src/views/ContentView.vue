@@ -3,9 +3,20 @@
     <h2 data-cy="content-view__header">{{ topic.header }}</h2>
     <img :src="'../' + topic.imageLink" />
     <essay-component :essay="essay" />
-    <div>
-      <button @click="prevItem" :disabled="prevButtonDisabled">前</button>
-      <button @click="nextItem" :disabled="nextButtonDisabled">次</button>
+    <div class="nav">
+      <a
+        :class="prevButtonDisabled ? 'nav-button-disabled' : 'nav-button'"
+        @click="prevItem"
+        :disabled="prevButtonDisabled"
+        >前</a
+      >
+      <span class="current">{{ selectedEssayIndex + 1 }}</span>
+      <a
+        :class="nextButtonDisabled ? 'nav-button-disabled' : 'nav-button'"
+        @click="nextItem"
+        :disabled="nextButtonDisabled"
+        >次</a
+      >
     </div>
   </div>
 </template>
@@ -84,5 +95,39 @@ img {
   width: 530px;
   height: 355px;
   top: 0px;
+}
+
+.nav {
+  margin-top: 30px;
+  margin-bottom: 50px;
+  width: 530px;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+}
+
+.current {
+  padding: 5px;
+}
+
+.nav-button {
+  padding: 5px;
+  border-radius: 3px;
+  color: black;
+}
+
+.nav-button:hover {
+  cursor: pointer;
+}
+
+.nav-button-disabled {
+  padding: 5px;
+  border-radius: 3px;
+  color: #e0e0e0;
+}
+
+.nav-button-disabled:hover {
+  background-color: white;
+  cursor: default;
 }
 </style>
