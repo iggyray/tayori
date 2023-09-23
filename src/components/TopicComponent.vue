@@ -30,15 +30,18 @@ export default defineComponent({
 </script>
 <style scoped>
 .topic-component {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 h4 {
   width: 250px;
   margin-top: 5px;
+  letter-spacing: 5px;
 }
 img {
   width: 250px;
-  height: 168px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
 }
 a:hover {
   cursor: pointer;
