@@ -39,9 +39,9 @@ h4 {
 }
 img {
   width: 250px;
-  height: 250px;
+  height: 220px;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 7px;
 }
 a:hover {
   cursor: pointer;
