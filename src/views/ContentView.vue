@@ -1,7 +1,9 @@
 <template>
   <div class="content-view__container">
-    <h2 data-cy="content-view__header">{{ topic.header }}</h2>
-    <img :src="'../' + topic.imageLink" />
+    <div class="content-view__image-group">
+      <h3 data-cy="content-view__header" class="content-view__header">{{ topic.header }}</h3>
+      <img :src="'../' + topic.imageLink" />
+    </div>
     <essay-component :essay="essay" />
     <div class="nav">
       <a
@@ -91,6 +93,24 @@ export default defineComponent({
   width: 530px;
   height: 100%;
 }
+
+.content-view__image-group {
+  width: 530px;
+  position: relative;
+}
+.content-view__header {
+  text-orientation: upright;
+  writing-mode: vertical-rl;
+  letter-spacing: 5px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  background-color: white;
+  padding: 10px 7px;
+  border-radius: 0 0 7px 7px;
+  opacity: 0.8;
+}
+
 img {
   width: 530px;
   height: 355px;
