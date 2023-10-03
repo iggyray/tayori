@@ -52,5 +52,6 @@ a:hover {
 }
 .topic-component:hover > img {
   filter: none;
+  -webkit-filter: none;
 }
 </style>
