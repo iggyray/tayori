@@ -42,8 +42,15 @@ img {
   height: 220px;
   object-fit: cover;
   border-radius: 7px;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  transition: filter 0.3s ease-in-out;
 }
+
 a:hover {
   cursor: pointer;
+}
+.topic-component:hover > img {
+  filter: none;
 }
 </style>
