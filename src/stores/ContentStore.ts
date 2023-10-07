@@ -1,7 +1,7 @@
 import { ref } from 'vue'
 import { defineStore } from 'pinia'
 
-type TopicId = '' | 'curry-rice' | 'nasu' | 'saba' | 'karaage'
+type TopicId = '' | 'curry-rice'
 
 type Essay = {
   topicId: TopicId
@@ -50,17 +50,17 @@ export const useContentStore = defineStore('contentStore', () => {
       imageLink: './images/curry-rice.jpg'
     },
     {
-      id: 'nasu',
+      id: '',
       header: '茄子と豚の味噌炒め',
       imageLink: './images/nasu.jpg'
     },
     {
-      id: 'saba',
+      id: '',
       header: '鶏と野菜の黒酢あん',
       imageLink: './images/kurozuan.jpg'
     },
     {
-      id: 'karaage',
+      id: '',
       header: 'さばの塩焼き',
       imageLink: './images/saba-shio.jpg'
     }

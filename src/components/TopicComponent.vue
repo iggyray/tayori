@@ -1,13 +1,13 @@
 <template>
-  <a @click="redirect">
-    <div class="topic-component">
+  <a @click="redirect" :class="isUnderConstruction ? '' : 'link-active'">
+    <div class="topic-component" :class="isUnderConstruction ? '' : 'topic-component-active'">
       <img :src="topic.imageLink" data-cy="topic-component__image" />
       <h4 data-cy="topic-component__header">{{ topic.header }}</h4>
     </div>
   </a>
 </template>
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { computed, defineComponent } from 'vue'
 import type { PropType } from 'vue'
 import { useRouter } from 'vue-router'
 import type { Topic } from '../views/ContentView.vue'
@@ -18,12 +18,17 @@ export default defineComponent({
   },
   setup(props) {
     const router = useRouter()
+
+    const isUnderConstruction = computed(() => !props.topic.id)
+
     const redirect = () => {
+      if (isUnderConstruction.value) return
       router.push('essays/' + props.topic.id)
     }
 
     return {
-      redirect
+      redirect,
+      isUnderConstruction
     }
   }
 })
@@ -47,10 +52,10 @@ img {
   transition: filter 0.3s ease-in-out;
 }
 
-a:hover {
+.link-active:hover {
   cursor: pointer;
 }
-.topic-component:hover > img {
+.topic-component-active:hover > img {
   filter: none;
   -webkit-filter: none;
 }
