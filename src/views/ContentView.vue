@@ -27,6 +27,7 @@
 import { computed, defineComponent, onBeforeMount, ref } from 'vue'
 import { useContentStore } from '../stores/ContentStore'
 import EssayComponent from '../components/EssayComponent.vue'
+import { useRouter } from 'vue-router'
 
 export type Essay = {
   topicId: string
@@ -47,16 +48,20 @@ export default defineComponent({
 
     const contentStore = useContentStore()
 
-    onBeforeMount(() => {
-      contentStore.setTopic('curry-rice')
-      contentStore.setEssays('curry-rice')
-    })
+    const router = useRouter()
+
+    const pageTitle = ref('')
 
     const topic = computed<Topic>(() => contentStore.state.topic)
 
     const essay = computed<Essay>(() => contentStore.state.essays[selectedEssayIndex.value])
 
-    const pageTitle = 'カレーライス'
+    onBeforeMount(() => {
+      const topicId = router.currentRoute.value.fullPath.split('/')[2]
+      contentStore.setTopic(topicId)
+      contentStore.setEssays(topicId)
+      pageTitle.value = topic.value.header
+    })
 
     const nextButtonDisabled = computed(
       () => selectedEssayIndex.value === contentStore.state.essays.length - 1
