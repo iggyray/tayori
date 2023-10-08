@@ -1,5 +1,5 @@
 <template>
-  <div class="side-bar" :class="showTitle ? '' : 'no-title'">
+  <div class="side-bar">
     <transition mode="out-in">
       <h3 v-if="showTitle">t a y o r i</h3>
       <div v-else style="height: 55px"></div>
@@ -31,9 +31,6 @@ export default defineComponent({
   font-size: 14px;
   color: black;
   text-align: left;
-}
-ul {
-  list-style-type: none;
 }
 a {
   padding: 2px 20px 2px 10px;
