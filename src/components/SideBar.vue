@@ -1,8 +1,8 @@
 <template>
   <div class="side-bar">
     <transition mode="out-in">
-      <h3 v-if="showTitle">t a y o r i</h3>
-      <div v-else style="height: 55px"></div>
+      <h3 v-if="showTitle" data-cy="side-bar__title">t a y o r i</h3>
+      <div v-else style="height: 55px" data-cy="side-bar__title-filler"></div>
     </transition>
     <nav>
       <li>
