@@ -1,7 +1,7 @@
 <template>
   <div class="topic-view__container">
     <div v-for="(topic, index) of topics" :key="index">
-      <topic-component :topic="topic" />
+      <topic-component :topic="topic" :index="index" />
     </div>
   </div>
 </template>

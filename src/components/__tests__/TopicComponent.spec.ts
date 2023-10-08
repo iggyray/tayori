@@ -9,7 +9,8 @@ describe('TopicComponent tests', () => {
       id: 'curry-rice',
       header: 'topic-header',
       imageLink: 'image-link.jpg'
-    }
+    },
+    index: 0
   }
 
   const mockRouter = createRouter({
@@ -32,5 +33,6 @@ describe('TopicComponent tests', () => {
     expect(wrapper.find('[data-cy=topic-component__image]').attributes('src')).toStrictEqual(
       'image-link.jpg'
     )
+    expect(wrapper.find('[data-cy=topic-component__index]').text()).toStrictEqual('01')
   })
 })
