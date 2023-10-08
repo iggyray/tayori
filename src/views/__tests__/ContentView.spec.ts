@@ -1,9 +1,15 @@
 import { flushPromises, mount } from '@vue/test-utils'
 import { describe, expect, it, vi } from 'vitest'
 import { createTestingPinia } from '@pinia/testing'
+import { createMemoryHistory, createRouter } from 'vue-router'
 import ContentView from '../ContentView.vue'
 
 describe('ContentView tests', () => {
+  const mockRouter = createRouter({
+    history: createMemoryHistory(),
+    routes: []
+  })
+
   const topicId = 'curry-rice'
   const title = 'title'
   const body = 'she sells sea shells'
@@ -11,6 +17,7 @@ describe('ContentView tests', () => {
     const wrapper = mount(ContentView, {
       global: {
         plugins: [
+          mockRouter,
           createTestingPinia({
             createSpy: vi.fn,
             initialState: {
