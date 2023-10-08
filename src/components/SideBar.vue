@@ -1,8 +1,16 @@
 <template>
   <div class="side-bar">
+    <transition mode="out-in">
+      <h3 v-if="showTitle" data-cy="side-bar__title">t a y o r i</h3>
+      <div v-else style="height: 55px" data-cy="side-bar__title-filler"></div>
+    </transition>
     <nav>
-      <p><router-link to="/">about</router-link></p>
-      <p><router-link to="/essays">essays</router-link></p>
+      <li>
+        <router-link to="/"><mdicon name="formatQuoteOpenOutline" height="15" /> about</router-link>
+      </li>
+      <li>
+        <router-link to="/essays"><mdicon name="textBoxOutline" height="15" /> essays</router-link>
+      </li>
     </nav>
   </div>
 </template>
@@ -12,23 +20,34 @@ import { RouterLink } from 'vue-router'
 
 export default defineComponent({
   components: { RouterLink },
+  props: {
+    showTitle: { type: Boolean, default: false }
+  },
   setup() {}
 })
 </script>
 <style scoped>
 .side-bar {
-  height: 100px;
-  font-size: 18px;
+  font-size: 14px;
   color: black;
-  text-align: right;
-}
-ul {
-  list-style-type: none;
+  text-align: left;
 }
 a {
-  padding: 2px 10px;
+  padding: 2px 20px 2px 10px;
 }
-p {
-  margin-bottom: -10px;
+li {
+  list-style: none;
+  margin-bottom: 5px;
+  margin-left: -15px;
+}
+
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
 }
 </style>
