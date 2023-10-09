@@ -2,7 +2,7 @@
   <div class="side-bar">
     <transition mode="out-in">
       <h3 v-if="showTitle" data-cy="side-bar__title">t a y o r i</h3>
-      <div v-else style="height: 55px" data-cy="side-bar__title-filler"></div>
+      <div v-else style="height: 52.4px" data-cy="side-bar__title-filler"></div>
     </transition>
     <nav>
       <li>
@@ -28,12 +28,12 @@ export default defineComponent({
 </script>
 <style scoped>
 .side-bar {
-  font-size: 14px;
+  font-size: 13px;
   color: black;
   text-align: left;
 }
 a {
-  padding: 2px 20px 2px 10px;
+  padding: 2px 15px 5px 7px;
 }
 li {
   list-style: none;
