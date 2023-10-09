@@ -1,9 +1,23 @@
+@font-face {
+  font-family: 'Shippori Mincho';
+  src: url('./fonts/ShipporiMincho-Regular.ttf') format('TrueType');
+}
+
+@font-face {
+  font-family: 'Shippori Mincho';
+  src: url('./fonts/ShipporiMincho-Bold.ttf');
+  font-weight: bold;
+}
+
 #app {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
-
   font-weight: normal;
+}
+
+* {
+  font-family: 'Shippori Mincho';
 }
 
 a,

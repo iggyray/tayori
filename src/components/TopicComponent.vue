@@ -53,6 +53,7 @@ export default defineComponent({
   display: flex;
   align-items: stretch;
   width: 100%px;
+  margin-top: -3px;
 }
 
 span {
