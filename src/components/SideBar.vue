@@ -9,7 +9,9 @@
         <router-link to="/"><mdicon name="formatQuoteOpenOutline" height="15" /> about</router-link>
       </li>
       <li>
-        <router-link to="/essays"><mdicon name="textBoxOutline" height="15" /> essays</router-link>
+        <router-link to="/essays/curry-rice"
+          ><mdicon name="textBoxOutline" height="15" /> essays</router-link
+        >
       </li>
     </nav>
   </div>
